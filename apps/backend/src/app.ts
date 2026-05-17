@@ -1,5 +1,7 @@
 const express = require("express")
 const { Router } = require("express")
+const  corsModule  = require("cors")
+const cors = corsModule.default || corsModule
 import { Request, Response } from "express"
 import usuarioRoutes from "./routes/usuario.routes"
 import viviendaRoutes from "./routes/vivienda.routes"
@@ -8,6 +10,7 @@ import experienciaRoutes from "./routes/experiencia.routes"
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 app.use("/usuarios", usuarioRoutes)
