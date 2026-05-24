@@ -1,10 +1,10 @@
 import { Router, Request, Response } from "express"
-import { ConsultaRepositoryMemoria } from "../repositories/consulta-repository-memoria"
+import { ConsultaRepositoryPostgres } from "../repositories/postgres/ConsultaRepositoryPostgres"
 import { CrearConsulta } from "../../../../domain/src/use-cases/consulta/crear-consulta"
 import { ListarConsultas } from "../../../../domain/src/use-cases/consulta/listar-consultas"
 
 const router = Router()
-const repo = new ConsultaRepositoryMemoria()
+const repo = new ConsultaRepositoryPostgres()
 
 router.post("/", async (req: Request, res: Response) => {
   try {

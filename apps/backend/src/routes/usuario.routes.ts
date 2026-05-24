@@ -1,11 +1,11 @@
 import { Router, Request, Response } from "express"
-import { UsuarioRepositoryMemoria } from "../repositories/usuario-repository-memoria"
+import { UsuarioRepositoryPostgres } from "../repositories/postgres/UsuarioRepositoryPostgres"
 import { AutenticacionService } from "../../../../domain/src/services/autenticacion-service"
 import { RegistrarAdmin } from "../../../../domain/src/use-cases/usuario/registrar-admin"
 import { AutenticarAdmin } from "../../../../domain/src/use-cases/usuario/autenticar-admin"
 
 const router = Router()
-const repo = new UsuarioRepositoryMemoria()
+const repo = new UsuarioRepositoryPostgres()
 const servicio = new AutenticacionService()
 
 router.post("/registrar", async (req: Request, res: Response) => {

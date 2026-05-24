@@ -1,10 +1,10 @@
 import { Router, Request, Response } from "express"
-import { ViviendaRepositoryMemoria } from "../repositories/vivienda-repository-memoria"
+import { ViviendaRepositoryPostgres } from "../repositories/postgres/ViviendaRepositoryPostgres"
 import { CrearVivienda } from "../../../../domain/src/use-cases/vivienda/crear-vivienda"
 import { EliminarVivienda } from "../../../../domain/src/use-cases/vivienda/eliminar-vivienda"
 
 const router = Router()
-const repo = new ViviendaRepositoryMemoria()
+const repo = new ViviendaRepositoryPostgres()
 
 router.post("/", async (req: Request, res: Response) => {
   try {
