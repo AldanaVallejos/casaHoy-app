@@ -3,7 +3,7 @@ Casa Hoy Solidez Total es una empresa real de venta de casas prefabricadas con p
 CasaHoy App es una plataforma orientada al primer contacto entre la empresa y los clientes.
 El sistema busca ofrecer una experiencia más cálida, visual e intuitiva durante la búsqueda de viviendas, reemplazando interfaces frías y poco personalizadas como chatbots por recorridos guiados con imágenes, videos y mensajes amigables.
 
-La aplicación permite:
+La aplicación permitirá:
 
 - Gestionar viviendas
 - Crear experiencias de bienvenida
@@ -71,6 +71,12 @@ Desarrollo guiado por pruebas
 Organización de proyectos monorepo
 Separación de responsabilidades
 Diseño de APIs
+Utilización de Docker
+
+Instrucciones para ejecutar la aplicación localmente:
+- git clone https://github.com/AldanaVallejos/casaHoy-app.git
+- Ejecutar: docker compose up --build
+Este comando levanta PostgreSQL, backend y frontend
 
 Autores
 Aldana Vallejos.
