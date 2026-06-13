@@ -48,10 +48,9 @@ export function FormularioConsulta({
 
   return (
     <div style={{
-      border: "1px solid #e5e7eb",
-      borderRadius: "12px",
-      padding: "24px",
-      width: "360px",
+      border: "none",
+      padding: "0",
+      width: "100%",
       fontFamily: "sans-serif"
     }}>
       <h3 style={{ margin: "0 0 4px", color: "#1e3a5f" }}>
