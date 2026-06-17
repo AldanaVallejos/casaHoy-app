@@ -37,23 +37,19 @@ export function FormularioConsulta({
   }
 
   if (mostrarEstadoCargando) {
-  return (
-    <div>
-      <h3>Enviando consulta...</h3>
-    </div>
-  )
-}
+    return (
+      <div className="text-center p-4 text-blue-600 font-semibold">
+        <h3>Enviando consulta...</h3>
+      </div>
+    )
+  }
 
   if (mostrarEstadoEnviado || enviado) {
     return (
-      <div style={{
-        textAlign: "center",
-        padding: "40px",
-        fontFamily: "sans-serif"
-      }}>
-        <div style={{ fontSize: "48px" }}>✅</div>
-        <h3 style={{ color: "#1e3a5f" }}>¡Consulta enviada!</h3>
-        <p style={{ color: "#6b7280" }}>
+      <div className="text-center p-10 font-sans">
+        <div className="text-5xl">✅</div>
+        <h3 className="text-blue-900">¡Consulta enviada!</h3>
+        <p className="text-gray-500">
           Nos pondremos en contacto a la brevedad.
         </p>
       </div>
@@ -61,32 +57,22 @@ export function FormularioConsulta({
   }
 
   return (
-    <div style={{
-      border: "none",
-      padding: "0",
-      width: "100%",
-      fontFamily: "sans-serif"
-    }}>
-      <h3 style={{ margin: "0 0 4px", color: "#1e3a5f" }}>
+    <div className="border-none p-0 w-full font-sans">
+      <h3 className="m-0 mb-1 text-blue-900">
         Me interesa esta vivienda
       </h3>
-      <p style={{ margin: "0 0 20px", color: "#6b7280", fontSize: "14px" }}>
+      <p className="m-0 mb-5 text-gray-500 text-sm">
         {tituloVivienda}
       </p>
 
       {mensajeError && (
-        <p
-          style={{
-            color: "red",
-            marginBottom: "16px"
-          }}
-        >
+        <p className="text-red-500 mb-4">
           {mensajeError}
         </p>
       )}
 
-      <div style={{ marginBottom: "16px" }}>
-        <label style={{ display: "block", marginBottom: "6px", color: "#374151", fontSize: "14px" }}>
+      <div className="mb-4">
+        <label className="block mb-1.5 text-gray-700 text-sm">
           Tu nombre
         </label>
         <input
@@ -94,19 +80,12 @@ export function FormularioConsulta({
           value={nombre}
           onChange={e => setNombre(e.target.value)}
           placeholder="Aldana Vallejos"
-          style={{
-            width: "100%",
-            padding: "10px",
-            border: "1px solid #d1d5db",
-            borderRadius: "8px",
-            fontSize: "14px",
-            boxSizing: "border-box"
-          }}
+          className="w-full p-2.5 border border-gray-300 rounded-lg text-sm"
         />
       </div>
 
-      <div style={{ marginBottom: "16px" }}>
-        <label style={{ display: "block", marginBottom: "6px", color: "#374151", fontSize: "14px" }}>
+      <div className="mb-4">
+        <label className="block mb-1.5 text-gray-700 text-sm">
           Tu teléfono
         </label>
         <input
@@ -114,19 +93,12 @@ export function FormularioConsulta({
           value={telefono}
           onChange={e => setTelefono(e.target.value)}
           placeholder="11-4567-8901"
-          style={{
-            width: "100%",
-            padding: "10px",
-            border: "1px solid #d1d5db",
-            borderRadius: "8px",
-            fontSize: "14px",
-            boxSizing: "border-box"
-          }}
+          className="w-full p-2.5 border border-gray-300 rounded-lg text-sm"
         />
       </div>
 
-      <div style={{ marginBottom: "20px" }}>
-        <label style={{ display: "block", marginBottom: "6px", color: "#374151", fontSize: "14px" }}>
+      <div className="mb-5">
+        <label className="block mb-1.5 text-gray-700 text-sm">
           Tu mensaje
         </label>
         <textarea
@@ -134,31 +106,13 @@ export function FormularioConsulta({
           onChange={e => setMensaje(e.target.value)}
           placeholder="Me interesa la casa de 3 ambientes..."
           rows={4}
-          style={{
-            width: "100%",
-            padding: "10px",
-            border: "1px solid #d1d5db",
-            borderRadius: "8px",
-            fontSize: "14px",
-            boxSizing: "border-box",
-            resize: "none"
-          }}
+          className="w-full p-2.5 border border-gray-300 rounded-lg text-sm resize-none"
         />
       </div>
 
       <button
         onClick={handleSubmit}
-        style={{
-          width: "100%",
-          backgroundColor: "#2563eb",
-          color: "white",
-          padding: "12px",
-          border: "none",
-          borderRadius: "8px",
-          fontSize: "16px",
-          cursor: "pointer",
-          fontWeight: "bold"
-        }}
+        className="w-full bg-blue-600 text-white p-3 border-none rounded-lg text-base cursor-pointer font-bold hover:bg-blue-700 transition-colors"
       >
         Enviar consulta
       </button>
