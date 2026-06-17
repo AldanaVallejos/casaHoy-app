@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { FormularioConsulta } from "../components/formulario-consulta/formulario-consulta"
 import { enviarConsultaUseCase } from "../use-cases/enviar-consulta-use-case"
+import { BotonPrimario } from "../components/boton-primario/boton-primario"
 import { Home, BadgeCheck, Building2, Headphones, Eye, MapPin, LayoutGrid } from "lucide-react"
 
 const viviendas = [
@@ -118,11 +119,10 @@ export function PaginaVivienda() {
             Te acompañamos en cada paso del proceso.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button
+            <BotonPrimario
+              texto ="Explorar viviendas"
               onClick={() => document.getElementById("viviendas")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-10 py-4 bg-[#2563eb] text-white rounded-full font-bold hover:shadow-xl hover:shadow-blue-500/40 transition-all hover:-translate-y-1">
-              Explorar viviendas
-            </button>
+            />
             <button
               onClick={() => document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}
               className="px-10 py-4 bg-white/10 backdrop-blur border border-white/30 text-white rounded-full font-bold hover:bg-white hover:text-[#022448] transition-all hover:-translate-y-1">
