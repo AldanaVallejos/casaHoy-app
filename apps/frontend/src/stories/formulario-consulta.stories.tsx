@@ -19,8 +19,30 @@ export const Vacio: Story = {
   }
 }
 
-export const ConDatos: Story = {
+export const Enviado: Story = {
+  args: {
+    tituloVivienda: 'Casa Box',
+    mostrarEstadoEnviado: true
+  }
+}
+
+export const TituloLargo: Story = {
+  args: {
+    tituloVivienda:
+      'Casa de 4 ambientes con jardín, quincho y cochera'
+  }
+}
+
+export const Cargando = {
   args: {
     tituloVivienda: "Casa Box",
+    mostrarEstadoCargando: true
+  }
+}
+
+export const Error = {
+  args: {
+    tituloVivienda: "Casa Box",
+    mensajeError: "No se pudo enviar la consulta"
   }
 }
