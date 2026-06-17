@@ -1830,7 +1830,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-v8@npm:^4.1.5":
+"@vitest/coverage-v8@npm:4.1.5, @vitest/coverage-v8@npm:^4.1.5":
   version: 4.1.5
   resolution: "@vitest/coverage-v8@npm:4.1.5"
   dependencies:
@@ -2336,6 +2336,7 @@ __metadata:
   resolution: "casasHoy-app@workspace:."
   dependencies:
     "@types/node": "npm:^25.6.2"
+    "@vitest/coverage-v8": "npm:4.1.5"
     tsx: "npm:^4.21.0"
     typescript: "npm:^6.0.3"
     vitest: "npm:^4.1.5"
