@@ -9,16 +9,13 @@ export function BotonPrimario({ texto, onClick, deshabilitado = false }: BotonPr
     <button
       onClick={onClick}
       disabled={deshabilitado}
-      style={{
-        backgroundColor: deshabilitado ? "#ccc" : "#2563eb",
-        color: "white",
-        padding: "12px 24px",
-        border: "none",
-        borderRadius: "8px",
-        fontSize: "16px",
-        cursor: deshabilitado ? "not-allowed" : "pointer",
-        fontWeight: "bold"
-      }}
+      className={`
+        px-6 py-3 rounded-full font-bold text-base transition-all duration-300
+        ${deshabilitado
+          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+          : "bg-[#2563eb] text-white hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5 cursor-pointer"
+        }
+      `}
     >
       {texto}
     </button>
