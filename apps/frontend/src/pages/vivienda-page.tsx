@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { FormularioConsulta } from "../components/formulario-consulta/formulario-consulta"
-import { crearConsulta } from "../services/consulta-service"
+import { enviarConsultaUseCase } from "../use-cases/enviar-consulta-use-case"
 import { Home, BadgeCheck, Building2, Headphones, Eye, MapPin, LayoutGrid } from "lucide-react"
 
 const viviendas = [
@@ -54,16 +54,17 @@ export function PaginaVivienda() {
   }) => {
     setCargando(true)
     setError(null)
-    try {
-      await crearConsulta({
-        viviendaId: viviendaSeleccionada || "vivienda-1",
-        ...datos
-      })
-    } catch (e: any) {
-      setError(e.message)
-    } finally {
-      setCargando(false)
+
+    const resultado = await enviarConsultaUseCase(
+      viviendaSeleccionada,
+      datos
+    )
+
+    if (!resultado.success) {
+      setError(resultado.error)
     }
+
+    setCargando(false)
   }
 
   const viviendaActual = viviendas.find(v => v.id === viviendaSeleccionada)
