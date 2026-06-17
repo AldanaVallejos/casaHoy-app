@@ -2,6 +2,9 @@ import { useState } from "react"
 
 interface FormularioConsultaProps {
   tituloVivienda: string
+  mostrarEstadoEnviado?: boolean
+  mostrarEstadoCargando?: boolean
+  mensajeError?: string
   onEnviar?: (datos: {
     nombreCliente: string
     telefonoCliente: string
@@ -11,6 +14,9 @@ interface FormularioConsultaProps {
 
 export function FormularioConsulta({
   tituloVivienda,
+  mostrarEstadoEnviado = false,
+  mostrarEstadoCargando = false,
+  mensajeError,
   onEnviar
 }: FormularioConsultaProps) {
   const [nombre, setNombre] = useState("")
@@ -30,7 +36,15 @@ export function FormularioConsulta({
     setEnviado(true)
   }
 
-  if (enviado) {
+  if (mostrarEstadoCargando) {
+  return (
+    <div>
+      <h3>Enviando consulta...</h3>
+    </div>
+  )
+}
+
+  if (mostrarEstadoEnviado || enviado) {
     return (
       <div style={{
         textAlign: "center",
@@ -59,6 +73,17 @@ export function FormularioConsulta({
       <p style={{ margin: "0 0 20px", color: "#6b7280", fontSize: "14px" }}>
         {tituloVivienda}
       </p>
+
+      {mensajeError && (
+        <p
+          style={{
+            color: "red",
+            marginBottom: "16px"
+          }}
+        >
+          {mensajeError}
+        </p>
+      )}
 
       <div style={{ marginBottom: "16px" }}>
         <label style={{ display: "block", marginBottom: "6px", color: "#374151", fontSize: "14px" }}>

@@ -39,3 +39,31 @@ export const Duplex: Story = {
     cantidadAmbientes: 2
   }
 }
+
+export const CasaPremium: Story = {
+  args: {
+    titulo: 'Casa Premium con pileta',
+    ubicacion: 'Puerto Madero',
+    tipo: 'CASA',
+    cantidadAmbientes: 8
+  }
+}
+
+export const Monoambiente: Story = {
+  args: {
+    titulo: 'Monoambiente',
+    ubicacion: 'La Plata',
+    tipo: 'DEPARTAMENTO',
+    cantidadAmbientes: 1
+  }
+}
+
+export const TituloLargo: Story = {
+  args: {
+    titulo:
+      'Casa moderna con jardín, pileta climatizada y quincho cubierto',
+    ubicacion: 'Tigre',
+    tipo: 'CASA',
+    cantidadAmbientes: 6
+  }
+}
